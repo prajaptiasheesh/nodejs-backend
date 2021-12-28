@@ -1,3 +1,4 @@
+import { use } from 'chai';
 import express from 'express';
 import UserController from '../controllers/user.controller';
 
@@ -11,7 +12,7 @@ class UserRoutes {
 
     constructor() {
         this.configureUserRoutes();
-        this.configurePostRoutes()
+        this.configurePostRoutes();
     }
 
     configureUserRoutes = () => {

@@ -8,15 +8,13 @@ import bodyParser from "body-parser";
 import lusca from "lusca";
 import mongo from "connect-mongo";
 import flash from "express-flash";
-import bluebird from "bluebird";
 import path from "path";
-
 import UserRoutes from './routes/user.route';
-``
+import runSample from './gmail-data-puller';
+
+
 
 const MongoStore = mongo(session);
-
-
 const app = express();
 
 const db = new Database()
@@ -47,5 +45,8 @@ app.use(
 const userRouter = new UserRoutes()
 
 app.use('/api/v1/user', userRouter.router);
+
+// runSample().then(res=>{
+// }).catch(console.error);
 
 export default app;
